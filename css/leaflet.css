@@ -1,7 +1,10 @@
 
-#map {
-    height: 560px;
+html, body, #map {
+    height: 100%;
     width: 100%;
+}
+#map {
+    z-index: 5;
 }
  
 #mapHeader {
@@ -20,12 +23,24 @@
     margin: o o 3em 0;
     padding: 0;
     list-style: none;
+    font-family: 'Open Sans';
     background-color: #fff;
     border-bottom: 1px solid #cccccc;
     border-top: 1px solid #cccccc;
 }
 #nav li {
     float: left;
+}
+#nav li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;    
+    font-weight: bold;
+    color: #696969;
+}
+#nav, li, a:hover {
+    color: #1a2734;
+    background-color: #b8dbf2;
 }
 /*
 .leaflet-control-wind-position {

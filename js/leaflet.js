@@ -5,11 +5,14 @@ L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=Eq1wRludzR
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
 }).addTo(map);
 
+var marker = L.marker([62.45, 17.53]).addTo(map);
+marker.bindPopup("Smacken, S/SW");
+
 /*
 
  // Add Markers to map in Leaflet//
 
-    const markers = L.markers([lat, lon]).addTo(mymap);
+    const markers 
 
 
         //  Array of markers
