@@ -8,41 +8,25 @@
     <!--https://leafletjs.com/examples/quick-start/-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
+    <link rel="stylesheet" href="/css/leaflet.css" />
     <title>Leaflet Map</title>
-    <style>
-        #mapid {
-            height: 512px;
-        }
-    </style>
-
+ 
 </head>
-<body>
-    <h3>KiteSpots</h3>
-    <div id="mapid"></div>
-    <script>
+    <body>
+        <h3>KiteSpots</h3>
+        <div id="map"></div>
 
-const mymap = L.map('mapid').setView([62.45, 17.53], 7);
+        <!--Add legends to the top of the map-->
+        <div id="legends">
+            <ul id="nav">
+                <li><a href="">Satelite</a></li>
+                <li><a href="">Wind</a></li>
+                <li><a href="">Weather</a></li>
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGlhaGNoZXN0b24iLCJhIjoiY2tpbG5seXE5MGxhYzJ6bXd4Y2xvN2xwMiJ9.efl4PsN0s5YHbu22oEqrlg', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
+            </ul>
+        </div>
 
-        //  Api for retreiving json data from OpenWeatherMap with celcius and metricsystem. 'http://api.openweathermap.org/data/2.5/weather?lat=63.213051&lon=18.4892165&appid=adaea23e7d3d3d7282deac8f1df59056&units=metric'   //    
-const owm_api = 'http://api.openweathermap.org/data/2.5/weather?lat=63.213051&lon=18.4892165&appid=adaea23e7d3d3d7282deac8f1df59056&units=metric'
+        <script src="/js/leaflet.js"></script>                                   
 
-async function getWeatherInfo() {
-    const response = await fetch(owm_api);
-    const data = await response.json();
-    const {lat, log, temp, wind} = data
-}
-
-
-    </script>
-</body>
+    </body>
 </html>
