@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--https://code.jquery.com/-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!--https://leafletjs.com/examples/quick-start/-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <title>Leaflet Map</title>
+    <style>
+        #mapid {
+            height: 512px;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>KiteSpots</h3>
+    <div id="mapid"></div>
+    <script>
+
+const mymap = L.map('mapid').setView([62.45, 17.53], 7);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGlhaGNoZXN0b24iLCJhIjoiY2tpbG5seXE5MGxhYzJ6bXd4Y2xvN2xwMiJ9.efl4PsN0s5YHbu22oEqrlg', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
+
+        //  Api for retreiving json data from OpenWeatherMap with celcius and metricsystem. 'http://api.openweathermap.org/data/2.5/weather?lat=63.213051&lon=18.4892165&appid=adaea23e7d3d3d7282deac8f1df59056&units=metric'   //    
+const owm_api = 'http://api.openweathermap.org/data/2.5/weather?lat=63.213051&lon=18.4892165&appid=adaea23e7d3d3d7282deac8f1df59056&units=metric'
+
+async function getWeatherInfo() {
+    const response = await fetch(owm_api);
+    const data = await response.json();
+    const {lat, log, temp, wind} = data
+}
+
+
+    </script>
+</body>
+</html>
