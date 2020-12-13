@@ -1,3 +1,4 @@
+       /*
        //   Array of markers; Taken the coordnates of some of the kites spots known 
        //   on the eastcoast of mid and north sweden. Every spot has a name, 
        //   coordinates, an id number, and the wind direction for the surfing. //
@@ -92,3 +93,4 @@
             {coords: {lat: 58.7966607, lng: 17.7912915 }, id: 74, content:'ÖRUDDEN V', windDirection: 'S/SW'}, 
             {coords: {lat: 58.7988784, lng: 17.8109458 }, id: 75, content:'ÖRUDDEN S', windDirection: 'S/SW'},
     ];
+    */
