@@ -1,4 +1,5 @@
 
+
 //  Array of markers //
     var markers = [
         //Kalix//
@@ -91,6 +92,44 @@
             ["spot", 58.7988784,17.8109458, "id75", "name", "ÖRUDDEN S","windDirection","S/S"]
     ];
 
+    // Kite spots //
+    var kiteSpots = L.layerGroup([markers]);
+
+    // source = https://leafletjs.com/examples/layers-control/
+    // Layers for toggle //
+    // Set the base layers for screen with layers. //
+
+    /*
+    var wind = L.tileLayer("http://api.openweathermap.org/data/2.5/forecast?", {id: "4f41d83b01c8da40f1f48c4dbc812774", tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution}),
+        satellite = L.tileLayer(mapboxUrl, {id: "MapID", tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
+
+    var map = L.map('map', {
+        center: [62.45, 17.53],
+        zoom: 5,
+        layers: [wind, satellite]
+    });
+
+    
+
+    // Create the 2 object layer and markers. //
+    var baseMaps = {
+        "Wind": wind,
+        "Temperature": temperature
+    };
+    var overlayMaps = {
+        "Kite Spots": markers
+    };
+
+    // Add it to the map. //
+    L.control.layers(baseMaps,overlayMaps).addTo(map);
+
+    // Style the baseMaps //
+    var baseMaps = {
+        "<span style='color: gray'>Wind</span>": wind,
+        "Temperature": temperature
+    };
+    */ 
+
         var map = L.map('map').setView([62.45, 17.53], 5);
 
 // Map from https://cloud.maptiler.com/maps/hybrid/ //
@@ -105,7 +144,7 @@ L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=Eq1wRludzR
             .bindPopup(markers[i][5])
             .addTo(map);
     }
-
+   
 /*
 
 addSpots() {

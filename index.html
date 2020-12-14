@@ -14,26 +14,164 @@
     </head>
     <body>
                <!--Add legends to the top of the map-->
-        <div class="topHeader" id="mapHeader">
+        <!-- <div class="topHeader" id="mapHeader">
             <ul id="nav">
                 <li><a href="">KiteSpots</a></li>
                 <li><a href="">Wind</a></li>
                 <li><a href="">Weather</a></li>
 
             </ul>
+        </div> -->
+    <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;">
+        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+            <div class="leaflet-layer" style="z-index: 7; transform: translate3d(0px, 0px, 0px) scale(1);"></div>
+            <div class="leaflet-pane leaflet-tile-pane"></div>
+            <div class="leaflet-pane leaflet-shadow-pane"></div>
+            <div class="leaflet-pane leaflet-overlay-pane"></div>
+            <div class="leaflet-pane leaflet-marker-pane"></div>
+            <div class="leaflet-pane leaflet-popup-pane"></div>
+            <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(54621px, 99498px, 0px);"></div>
         </div>
-        
-        <div id="map"></div>
 
+        <div class="leaflet-control-container">
+            <div class="leaflet-top leaflet-left">
+                <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                    <a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a>
+                    <a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out">-</a>
+                </div>
+                <div class="leaflet-bar leaflet-control">
+                    <div>
+                    </div>
+                    <form style="display: none; position: absolute; left: 27px; top: 0px; z-index: -10;">
+                        <input style="height: 25px; border: 1px solid grey; padding: 0px 0px 0px 10px;">
+                    </form>
+                </div>
+            </div>
 
- 
+            <div class="leaflet-top leaflet-right">
+                <div class="control-container weather-control-layers weather-control-layers-expanded leaflet-control" aria-haspopup="true">
+                    <div class="weather-control-layers-list">
+                        <div class="weather-control-layers-new-separator">
+                                </div>
+                                <div class="weather-control-layers-new-base">
+                                </div>
+                        <div class="weather-control-layers-separator" style="display: none;">
+                        </div>
+
+                        <div class="weather-control-layers-overlays weather-control-layers-last">
+                            <div class="weather-layer-container">
+                            <input type="radio" id="Satellite" name="Parameters" class="weather-control-layers-selector" checked="">
+                            <label for="Satellite">
+                                <span> Satellite</span>
+                            </label>
+                        </div>
+
+                        <div class="weather-layer-container">
+                            <input type="radio" id="Pressure" name="Parameters" class="weather-control-layers-selector">
+                            <label for="Pressure">
+                                <span> Pressure</span>
+                            </label>
+                        </div>
+
+                        <div class="weather-layer-container">
+                            <input type="radio" id="Wind speed" name="Parameters" class="weather-control-layers-selector">
+                            <label for="Wind speed">
+                                <span> Wind speed</span>
+                            </label>
+                        </div>
+
+                        <div class="weather-layer-container">
+                            <input type="radio" id="Temperature" name="Parameters" class="weather-control-layers-selector">
+                            <label for="Temperature">
+                                <span> Temperature</span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="weather-layer-checkbox-coord">
+                    <div>
+                        <input type="checkbox" class="weather-layer-container__checkbox" id="kitespots" style="padding-right: 5px;">
+                        <label class="weather-layer-container__label" for="kitespots">KiteSpots
+                        </label>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class="play-control leaflet-control">
+                <div>
+                    <button id="play-back-faster">
+                        <img src="/images/backward-solid.svg">
+                    </button>
+                    <button id="play-back">
+                                   
+                    </button>
+                    <button id="play">
+                        <img src="/images/play-solid.svg">
+                    </button>
+                    <button id="stop" style="display: none;">
+                        <img src="/images/stop-solid.svg">
+                    </button>
+                    <button id="play-forward">
+                        
+                    </button>
+                    <button id="play-forward-faster">
+                        <img src="/images/forward-solid.svg">
+                    </button>
+                </div>
+                <div>
+                    <span id="current-moment">Dec 13, 20:40</span>
+                </div>
+                <div>
+                    <input id="control-range" type="range" min="1" max="112">
+                </div>
+                <div>
+                    <span id="min-date">Dec 06</span>
+                    <span id="max-date">Dec 20</span>
+                </div>
+                </div>
+            </div>
+            <div class="leaflet-bottom leaflet-left">
+                <div class="leaflet-control-color-scale leaflet-control" style="display: block;background: none;box-shadow: none;border-width: 0px;margin-right: 10px;width: 360px;height: 27px;">
+                    <div class="leaflet-control-color-scale-line" style="background-image: none; position: relative; border-width: 0px; margin: 0px;">
+                        <div class="scale-details">
+                            <div>Temperature, °C
+                            </div>
+                            <div class="scale-gradient" style="width: 260px; height: 26px;">
+                                <div class="scale-dividers">
+                                    <div>-40</div>
+                                    <div>-20</div>
+                                    <div>0</div>
+                                    <div>20</div>
+                                    <div>40</div>
+                                </div>
+                                <div class="horizontal-gradient-line">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="leaflet-bottom leaflet-right">
+                
+                
+            </div>
+        </div>
+    </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
             <!--https://code.jquery.com/-->
         <!--<script src="js/vendorn/modenizr-3.5.0.min.js"></script> -->
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="/js/leaflet.js"></script>
+        <script src="/js/layers.js"></script>
         <script src="/js/map.js"></script>
+        <!-- <script src="/js/maps.js"></script> -->
+        <!-- <script src="/js/class.js"></script> -->
+
+
 
     </body>
 </html>
