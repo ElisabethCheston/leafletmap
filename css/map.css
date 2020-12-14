@@ -93,7 +93,10 @@ html, body, #map {
     float: right;
 }
 .leaflet-bottom, .leaflet-control {
-    margin-bottom: 10px;;
+    margin-bottom: 0px;;
+}
+.scale {
+    margin-bottom: 16px;;
 }
 scale-dividers {
     width: 100%;
@@ -120,6 +123,7 @@ scale-dividers {
     color: #777777;
     padding: 0;
     margin-right: 10px;
+    margin-bottom: 10px;
     width: 360px;
     height: 26px;
 }
@@ -128,8 +132,8 @@ scale-dividers {
     position: relative;
     border-width: 0px;
     box-sizing: border-box;
-    margin: 0px;
-    height: 5px;
+    margin: 4px;
+    height: 8px;
     border-top: 1px solid #777777;
     border-bottom: 1px solid #777777;
 }
