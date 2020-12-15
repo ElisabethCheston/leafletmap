@@ -1,33 +1,22 @@
 
-const options = {
-    key: '2HKms1Uf1Q6WEcVvlflRiW1nxBlyVjdN', // REPLACE WITH YOUR KEY !!!
+    // source = https://leafletjs.com/examples/layers-control/
+    // Layers for toggle //
+    // Set the base layers for screen with layers. //
 
-    // Put additional console output
-    verbose: true,
+   
+    // Map from https://cloud.maptiler.com/maps/hybrid/ //
+L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=Eq1wRludzR4Xg059gxvk', {
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
 
-    // Optional: Initial state of the map
-    lat: 62.45,
-    lon: 17.52,
-    zoom: 5,
-};
+    var map = L.map('map').setView([62.45, 17.53], 5);
 
-// Initialize Windy API
-windyInit(options, windyAPI => {
-    // windyAPI is ready, and contain 'map', 'store',
-    // 'picker' and other usefull stuff
+    var map = L.map('map', {
+        center: [62.45, 17.53],
+        zoom: 5,
+        layers: [wind, satellite]
+    });
 
-    const { map } = windyAPI;
-    // .map is instance of Leaflet map
-
-    L.popup()
-        .setLatLng([50.4, 14.3])
-        .setContent('Hello World')
-        .openOn(map);
-});
-
-
-
-/*
 //  Array of markers //
     var markers = [
         //Kalix//
@@ -123,21 +112,14 @@ windyInit(options, windyAPI => {
     // Kite spots //
     var kiteSpots = L.layerGroup([markers]);
 
-    // source = https://leafletjs.com/examples/layers-control/
-    // Layers for toggle //
-    // Set the base layers for screen with layers. //
+     // Add Markers to map in Leaflet//
+    for (var i = 0; i < markers.length; i++) {
+        spots = new L.marker([markers[i][1],markers[i][2]])
+            .bindPopup(markers[i][5])
+            .addTo(map);
+    }
 
-    /*
-    var wind = L.tileLayer("http://api.openweathermap.org/data/2.5/forecast?", {id: "4f41d83b01c8da40f1f48c4dbc812774", tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution}),
-        satellite = L.tileLayer(mapboxUrl, {id: "MapID", tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
-
-    var map = L.map('map', {
-        center: [62.45, 17.53],
-        zoom: 5,
-        layers: [wind, satellite]
-    });
-
-    
+     /*
 
     // Create the 2 object layer and markers. //
     var baseMaps = {
@@ -156,7 +138,7 @@ windyInit(options, windyAPI => {
         "<span style='color: gray'>Wind</span>": wind,
         "Temperature": temperature
     };
-    */ 
+ 
 
         var map = L.map('map').setView([62.45, 17.53], 5);
 
@@ -172,7 +154,7 @@ L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=Eq1wRludzR
             .bindPopup(markers[i][5])
             .addTo(map);
     }
-   
+     */  
 /*
 
 addSpots() {
