@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
 
-html, body, #map {
+html, body, #map, #windy {
     height: 100%;
     width: 100%;
     margin: 0;

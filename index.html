@@ -6,6 +6,8 @@
     <!--https://leafletjs.com/examples/quick-start/-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
     <link rel="stylesheet" href="/css/map.css" />
 
 
@@ -13,6 +15,7 @@
  
     </head>
     <body>
+        <div id="windy"></div>
                <!--Add legends to the top of the map-->
         <!-- <div class="topHeader" id="mapHeader">
             <ul id="nav">
@@ -21,7 +24,7 @@
                 <li><a href="">Weather</a></li>
 
             </ul>
-        </div> -->
+        </div> 
     <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;">
         <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
             <div class="leaflet-layer" style="z-index: 7; transform: translate3d(0px, 0px, 0px) scale(1);"></div>
@@ -159,9 +162,8 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
             <!--https://code.jquery.com/-->
         <!--<script src="js/vendorn/modenizr-3.5.0.min.js"></script> -->
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
