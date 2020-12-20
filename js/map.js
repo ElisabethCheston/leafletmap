@@ -1,17 +1,15 @@
 
-    // source = https://leafletjs.com/examples/layers-control/
-    // Layers for toggle //
-    // Set the base layers for screen with layers. //
+// Layer code from Leaflet example >>> https://leafletjs.com/examples/layers-control/
 
-var map = L.map('map', {
+// Map from https://cloud.maptiler.com/maps/hybrid/ //
+var hybrid = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=Eq1wRludzR4Xg059gxvk', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'});
+var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
+
+var map = L.map('mapid', {
     center: [63.45, 17.52],
     zooom: 5,
     layers: [hybrid, kitespots]
 });
-
-    // Map from https://cloud.maptiler.com/maps/hybrid/ //
-var hybrid = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=Eq1wRludzR4Xg059gxvk', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'});
-var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
 
 var baseMaps = {
     "Hybrid": hybrid,
