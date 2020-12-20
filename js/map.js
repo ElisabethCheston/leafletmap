@@ -11,7 +11,7 @@ var map = L.map('map', {
 
     // Map from https://cloud.maptiler.com/maps/hybrid/ //
 var hybrid = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=Eq1wRludzR4Xg059gxvk', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'});
-    streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
+var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
 
 var baseMaps = {
     "Hybrid": hybrid,
@@ -164,7 +164,7 @@ L.control.layers(baseMaps, overlayMaps).addTo(map);
     
         // Loop for the kitespots. //
         for (var i = 0; i < kitespots.length; i++) {
-            spots = new L.marker([kitespots[i][1],kitespots[i][2]])
+            kitespots = new L.marker([kitespots[i][1],kitespots[i][2]])
                 .bindPopup(kitespots[i][0],kitespots[i][4],kitespots[i][5],kitespots[i][6])
                 .addTo(map);
         }
